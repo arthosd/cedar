@@ -1,0 +1,3 @@
+import database_pipeline
+import bot_pipeline
+import data_pipeline
