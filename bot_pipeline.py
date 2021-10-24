@@ -12,7 +12,8 @@ from app.Bots.scheduler import start_process
 from app.Bots.bots.MatterBot import MatterBot
 from app.Bots.bots.GlobalForestBot import GlobalForestBot
 
-start_process([
-    GlobalForestBot,
-    MatterBot
-])
+def start_bots () :
+    start_process([
+        GlobalForestBot,
+        MatterBot
+    ])
