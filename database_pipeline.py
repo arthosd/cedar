@@ -8,7 +8,7 @@ from app.log.log import lprint
 import configparser
 
 config = configparser.ConfigParser()
-config.read("config/database.cfg")
+config.read("config/config.cfg")
 
 # Mongo database
 mongo_name = config.get("MONGO", "db_name")

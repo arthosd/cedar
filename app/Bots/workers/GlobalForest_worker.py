@@ -42,6 +42,7 @@ def start_global () :
             lprint("MYSQL -> ADDED ARTICLE TO DATABASE", 1)
         
         sql_database.commit_change()
+        lprint("MYSQL ----> commit all changes", 1)
 
         # Changing treated to True
         db.update_many_data(

@@ -6,6 +6,8 @@ import pip # Pip librairy for installing packages
 import platform # To determine platform 
 import configparser # Reading config file
 
+import os
+
 cfg = configparser.ConfigParser()
 cfg.read('config/config.cfg')  # Open config file
 
@@ -28,6 +30,7 @@ def install_packages (bool):
         install('bs4') # Beautifull soup
         install('zipfile') # zip
         install('urllib') # downlaod
+        install('pandas') # downlaod
     else :
         print ("Requirements already satisfied")
 
@@ -61,6 +64,7 @@ def download_selenium_driver (version):
 
     # Un-zipping file
     zipRef.extractall("app/Bots/bots/")
+    os.chmod('app/Bots/bots/chromedriver', 755)
 
 
 # Downloading and Installing selenium

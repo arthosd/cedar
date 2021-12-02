@@ -23,7 +23,6 @@ def start_matter():
 
         # Transforming json format to pandas format
         df = pd.DataFrame(list(raw_data))
-
         # Cleaning data
         """
             1 -> Removing the "by" before the author.
@@ -49,6 +48,7 @@ def start_matter():
             lprint("MYSQL -> ADDED ARTICLE TO DATABASE", 1)
 
         sql_database.commit_change() 
+        lprint("MYSQL ----> Commit all changes")
 
         # changing treated to True
         db.update_many_data(
