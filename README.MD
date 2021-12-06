@@ -8,25 +8,6 @@ This project is now open-sourced so that everyone can improve the bot to its end
 
 
 ## Getting Started
-******
-### Install librairies   
-
-Run the following commands on a terminal :
-
-```bash
-pip install pymongo
-pip install scrapy
-pip install bs4
-pip install selenium
-pip install tweepy
-pip install nltk
-```
-***WARNING :*** If you're using the built-in text summurizer you'll need to install the stopwords librairy from nltk.
-### Download chromedriver
-
-You can download chromedriver [here](https://chromedriver.chromium.org/downloads).   
-Make sure you'll download the ***same version as your chrome installation on your local device***. Extract the file in `"app/Bots/bots/"`.
-
 ### Install Mysql and MongoDB
 
 Project cedars uses MongoDB to store crawled data and mysql to store processed data.   
@@ -37,12 +18,34 @@ Thus, you'll need to install them and make sure they are up and running on your 
 ***NOTICE :*** The project is attented to be used in local only. Next version will add host functionalities.   
 
 ### Configure project
-Located in `/config` folder are all the config files needed to run the project. 
-- application.cfg : Selenium configurations and other.
-- database.cfg : Mongo and mysql configurations.
-- twitter.cfg : Twitter's API configuration.     
+Create the file in the following path `/config/config.cfg. This file is required to run the installer
+```
+[MONGO]:
+
+db_name = article
+collection_name = article
+
+[MYSQL]:
+
+database_host = host
+database_user = user
+database_pwd = pwd
+database_name = db_name
+database_table = table_name
+
+[SELENIUM]:
+
+chromedriver_version = 95.0.4638.69
+```    
    
-***WARNING :*** Make sure you've entered all necessary field otherwise project will crash.
+***WARNING :*** You'll need the enter ALL THE fields otherwise project will crash.
+
+### Run installer
+After creating and configuring `config.cfg` run the following command :
+
+```bash
+python /config/setup.py
+```
 
 ## Start project
 To start the whole pipeline just run the following line at the root of the project :
